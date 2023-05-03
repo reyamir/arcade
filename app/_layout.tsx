@@ -1,8 +1,7 @@
-import { Slot, SplashScreen, Stack } from 'expo-router'
+import { Slot, SplashScreen } from 'expo-router'
 import { useCachedResources } from 'lib/hooks'
-import { StatusBar, View } from 'react-native'
+import { StatusBar } from 'react-native'
 import { TamaguiProvider, Theme } from 'tamagui'
-import { BackgroundCanvas } from 'views/three/BackgroundCanvas'
 import { config } from '../tamagui.config'
 
 export default function Layout() {
@@ -12,6 +11,7 @@ export default function Layout() {
     return <SplashScreen />
   }
 
+  /*
   return (
     <View style={{ height: '100vh' }}>
       <View
@@ -38,15 +38,14 @@ export default function Layout() {
       </View>
     </View>
   )
+  */
 
-  // return (
-  //   <TamaguiProvider config={config}>
-  //     <BackgroundCanvas />
-  //     {/* <Slot /> */}
-  //     {/* <Theme name="dark">
-  //       <Slot />
-  //     </Theme> */}
-  //     <StatusBar barStyle="light-content" />
-  //   </TamaguiProvider>
-  // )
+  return (
+    <TamaguiProvider config={config}>
+      <Theme name="dark">
+        <Slot />
+      </Theme>
+      <StatusBar barStyle="light-content" />
+    </TamaguiProvider>
+  )
 }
