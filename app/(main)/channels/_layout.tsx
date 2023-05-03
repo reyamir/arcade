@@ -4,11 +4,13 @@ export default function Layout() {
   return (
     <Stack
       screenOptions={{
-        headerTitle: 'Channels',
-        headerStyle: { backgroundColor: '#000' },
+        title: 'Channels',
+        headerStyle: { backgroundColor: '#030712' },
         headerShadowVisible: false,
         headerTintColor: '#fff',
-        contentStyle: { backgroundColor: '#000' },
+        contentStyle: {
+          backgroundColor: '#030712',
+        },
       }}
     />
   )

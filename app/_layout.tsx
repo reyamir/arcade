@@ -1,8 +1,6 @@
 import { Slot, SplashScreen } from 'expo-router'
 import { useCachedResources } from 'lib/hooks'
-import { StatusBar } from 'react-native'
-import { TamaguiProvider, Theme, YStack } from 'tamagui'
-import { config } from '../tamagui.config'
+import { StatusBar, View } from 'react-native'
 
 export default function Layout() {
   const loaded = useCachedResources()
@@ -41,13 +39,8 @@ export default function Layout() {
   */
 
   return (
-    <TamaguiProvider config={config}>
-      <Theme name="dark">
-        <YStack f={1} backgroundColor={'$backgroundPrimary'}>
-          <Slot />
-        </YStack>
-      </Theme>
-      <StatusBar barStyle="light-content" />
-    </TamaguiProvider>
+    <View style={{ flex: 1, backgroundColor: '#030712', overflow: 'hidden' }}>
+      <Slot />
+    </View>
   )
 }
