@@ -16,11 +16,8 @@ export default function Alby() {
 
   async function initAlby() {
     const nwc: any = webln.NostrWebLNProvider.withNewSecret()
-    nwcURL.current = nwc.getNostrWalletConnectUrl({
-      name: 'Arcade',
-      returnTo: document.location.toString(),
-    })
-    await nwc.initNWC()
+    nwcURL.current = nwc.getNostrWalletConnectUrl()
+    await nwc.initNWC({ name: 'Arcade' })
   }
 
   function getInvoiceFromAddress(address: string) {
